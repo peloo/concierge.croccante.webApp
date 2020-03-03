@@ -1,0 +1,36 @@
+<html>
+<head>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+<div id="example">
+    <form action="javascript:void(0);">
+        <button v-on:click="dosomething">Add 1</button>
+        {{ counter }} {{ message }}
+    </form>
+</div>
+
+<script>
+    var places = ['World', 'America', 'Europe', 'Asia']
+    var object = {
+        message: 'Hello world!',
+        counter: 0
+    };
+    new Vue({
+        el: '#example',
+        data: object,
+        methods: {
+            dosomething: function (event) {
+                // `this` inside methods points to the Vue instance
+                // `event` is the native DOM event
+                // alert(event.target.tagName);
+                this.counter += 1;
+                this.message = 'Hello ' + (places[this.counter%4]) + '!';
+            }
+        }
+    })
+</script>
+</body>
+
+</html>

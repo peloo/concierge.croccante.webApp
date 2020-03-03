@@ -1,0 +1,80 @@
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+    color: #fff;
+}
+
+/* Custom default button */
+.btn-outline-warning {
+    margin-bottom: -5px;
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+    background-color: #232F3E;
+    color: white;
+    position: relative;
+}
+
+.cover-container {
+    text-align: center;
+    margin-top: 15%;
+    max-width: 500px;
+    border: 1px solid #FFFFFF;
+    border-radius: 20px;
+}
+
+.lead {
+    text-align: justify;
+}
+
+@media (min-width: 48em) {
+    .masthead-brand {
+        float: left;
+    }
+
+    .nav-masthead {
+        float: right;
+    }
+}
+
+#centralDiv {
+    width: 10em;
+    height: 9em;
+    position: relative;
+}
+#sx {
+    width: 10em;
+    height: 10em;
+    position: absolute;
+    left: 2.5em;
+    top: 1.5em;
+}
+#sx2 {
+    width: 10em;
+    height: 10em;
+    position: absolute;
+    left: 2.2em;
+    top: 2.5em;
+}
+#dx {
+    width: 12em;
+    height: 10em;
+    position: absolute;
+    top: 2em;
+    left: 13.5em;
+    text-align: center;
+}
+#bottom {
+    margin-top: 4em;
+}

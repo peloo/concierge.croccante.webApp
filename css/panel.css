@@ -1,0 +1,27 @@
+body {
+    background-color: #232F3E;
+    color: white;
+    position: relative;
+}
+
+.container {
+    margin-top: 9%;
+    max-width: 900px;
+    border: 1px solid #FFFFFF;
+    border-radius: 20px;
+}
+
+.titleText {
+    padding: 2em;
+}
+
+.titleText h2 {
+    text-align: center;
+    padding-bottom: 0.5em;
+}
+
+ul h6 {
+    color: black;
+}
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="css/loading.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/signin.js"></script>
+    <script src="js/canSupportSessionStorage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Concierge Croccante Panel Control</title>
+</head>
+<body>
+
+<form class="form-signin animated zoomIn" id="signinForm">
+    <div id="headLoginPanel">
+        <div id="sx">
+            <img class="mb-4" src="img/logo.png" alt="" width="100" height="100">
+        </div>
+        <div id="dx">
+            <h1 class="h3 mb-3 font-weight-normal">Accedi nel pannello di controllo</h1>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="email" class="sr-only"><i class="fa fa-envelope" aria-hidden="true"></i> Indirizzo email</label>
+        <input type="email" id="email" class="form-control" placeholder="Indirizzo email" required autofocus>
+        <p class="text-danger" id="checkValidityEmail"></p>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="sr-only"><i class="fa fa-key" aria-hidden="true"></i> Password</label>
+        <input type="password" id="password" class="form-control" placeholder="Password" required>
+        <p class="text-danger" id="checkValidityPassword"></p>
+    </div>
+
+    <input type="text" id="action" value="signin" hidden>
+    <button class="btn btn-lg btn-outline-success btn-block" style="color: white" type="button" id="button" onclick="signin()"><i class="fa fa-sign-in" aria-hidden="true"></i> Accedi</button>
+    <a class="btn btn-lg btn-outline-primary btn-block" style="color: white" href="signup/signup.html" role="button"><i class="fa fa-user-plus" aria-hidden="true"></i> Registrati</a>
+</form>
+
+
+<script>
+    const loading = {
+        load: '<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>'
+    };
+    new Vue({
+        el: '#vueLoginPanel',
+        data: loading
+    });
+</script>
+
+</body>
+</html>

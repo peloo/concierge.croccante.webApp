@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/panel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Pannello - Concierge Croccante Panel Control</title>
+</head>
+<body>
+<div class="container">
+    <div class="titleText">
+        <h2>Pannello di configurazione Skill</h2>
+        <p class="lead">In questa pagina potrai impostare i dati del tuo account. Per poter funzionare correttamente la
+            Skill Concierge Croccante andrá a leggere i dati
+            salvati sul questo pannello di controllo.</p>
+    </div>
+
+    <div id="vueRiepilog" class="row">
+        <div class="col-md-5 order-md-2 mb-5">
+            <form class="needs-validation" novalidate>
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span><i class="fa fa-user-circle" aria-hidden="true"></i> Riepilogo</span>
+                </h4>
+                <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">Nome</h6>
+                        </div>
+                        <span class="text-muted">{{ vueName }}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">Cognome</h6>
+                        </div>
+                        <span class="text-muted">{{ vueSurname }}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">Email</h6>
+                        </div>
+                        <span class="text-muted">{{ vueEmail }}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">Metodo di notifica</h6>
+                        </div>
+                        <span class="text-muted">{{ vueNotification }}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between bg-light">
+                        <div class="text-success">
+                            <h6 class="my-0">Calendario</h6>
+                        </div>
+                        <span class="text-success">{{ vueCalendar }}</span>
+                    </li>
+                </ul>
+                <button class="btn btn-outline-success btn-lg" style="color: white" type="submit">
+                    <i class="fa fa-floppy-o"></i> Salva
+                </button>
+            </form>
+        </div>
+
+        <div class="col-md-7 order-md-1">
+            <h4 class="mb-3"><i class="fa fa-id-card-o" aria-hidden="true"></i> I tuoi dati</h4>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="firstName"><i class="fa fa-keyboard-o" aria-hidden="true"></i> Nome</label>
+                    <input v-model="vueName" class="form-control" id="firstName" placeholder="" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="lastName"><i class="fa fa-keyboard-o" aria-hidden="true"></i> Cognome</label>
+                    <input v-model="vueSurname" class="form-control" id="lastName" placeholder="" required>
+                </div>
+            </div>
+            <hr class="mb-4">
+            <div class="mb-3">
+                <label for="email"><i class="fa fa-envelope" aria-hidden="true"></i> Email</label>
+                <input v-model="vueEmail" class="form-control" id="email" placeholder="tantebestemmie@example.com">
+            </div>
+            <hr class="mb-4">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="notification"><i class="fa fa-bell" aria-hidden="true"></i> Metodo di notifica</label>
+                    <select v-model="vueNotification" class="custom-select d-block w-100" id="notification" required>
+                        <option disabled>Scegli...</option>
+                        <option value="email" selected>email</option>
+                        <option value="sms">sms</option>
+                        <option value="whatsapp">whatsapp</option>
+                        <option value="telegram">telegram</option>
+                        <option value="voip">voip</option>
+                    </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="calendar"><i class="fa fa-calendar" aria-hidden="true"></i> Calendario</label>
+                    <select v-model="vueCalendar" class="custom-select d-block w-100" id="calendar" required>
+                        <option disabled>Scegli...</option>
+                        <option value="google calendar" selected>Google Calendar</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    myObject = new Vue({
+        el: '#vueRiepilog',
+        data: {
+            vueName: '',
+            vueSurname: '',
+            vueEmail: '',
+            vueNotification: '',
+            vueCalendar: ''
+        }
+    });
+</script>
+
+</body>
+</html>
+
+

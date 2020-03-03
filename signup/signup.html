@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/signup.css">
+    <link rel="stylesheet" type="text/css" href="../node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../js/signup.js"></script>
+    <script src="js/canSupportSessionStorage.js"></script>
+    <title>Registrati - Concierge Croccante Panel Control</title>
+</head>
+<body>
+
+<div class="container animated fadeInLeft">
+    <div class="titleText">
+        <h1>Form di registrazione.</h1>
+        <p class="lead">
+            Compila il modulo sottostante per accedere alla pagina di settaggio della Skill Concierge
+            Croccante.</p>
+        <label>Pagina in fase di creazione. </label>
+    </div>
+
+    <div id="centralDiv">
+        <form class="needs-validation" id="signupForm">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="firstName"><i class="fa fa-keyboard-o" aria-hidden="true"></i> Nome</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="Mario" required autofocus>
+                    <p class="text-danger" id="checkValidityFirsName"></p>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="lastName"><i class="fa fa-keyboard-o" aria-hidden="true"></i> Cognome</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Rossi" required>
+                    <p class="text-danger" id="checkValidityLastName"></p>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="email"><i class="fa fa-envelope" aria-hidden="true"></i> Indirizzo email</label>
+                <input type="email" class="form-control" id="email" placeholder="pancettacroccante@crispybacon.it" required>
+                <p class="text-danger" id="checkValidityEmail"></p>
+            </div>
+            <div class="mb-3">
+                <label for="email"><i class="fa fa-key" aria-hidden="true"></i> Password</label>
+                <input type="password" class="form-control" id="password" required>
+                <p class="text-danger" id="checkValidityPassword"></p>
+            </div>
+            <div class="row">
+                <label class="labelText"> Seleziona il metodo di notifica con il quale vuoi che il concierge ti contatti
+                    e l'agenda degli appuntamenti.</label>
+                <div class="col-md-6 mb-3">
+                    <label for="notification"><i class="fa fa-bell" aria-hidden="true"></i> Metodo di notifica</label>
+                    <select class="custom-select d-block w-100" id="notification" required>
+                        <option disabled>Scegli...</option>
+                        <option value="ses" selected>email</option>
+                        <option value="sms">sms</option>
+                        <option value="whatsapp">whatsapp</option>
+                        <option value="telegram">telegram</option>
+                        <option value="voip">voip</option>
+                    </select>
+                    <p class="text-danger" id="checkValidityNotification"></p>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="calendar"><i class="fa fa-calendar" aria-hidden="true"></i> Calendario</label>
+                    <select class="custom-select d-block w-100" id="calendar" required>
+                        <option disabled>Scegli...</option>
+                        <option value="googlecalendar" selected>Google Calendar</option>
+                    </select>
+                    <p class="text-danger" id="checkValidityCalendar"></p>
+                </div>
+            </div>
+            <hr class="mb-4">
+            <input type="text" id="action" value="signup" hidden>
+            <button class="btn btn-lg btn-outline-primary btn-block" type="button" style="color: white" id="button" onclick="signup()"><i class="fa fa-user-plus" aria-hidden="true"></i> Registrami</button>
+            <a class="btn btn-lg btn-outline-warning btn-block" style="color: white" href="../index.html" role="button"><i class="fa fa-sign-in" aria-hidden="true"></i> Accedi al pannello</a>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
